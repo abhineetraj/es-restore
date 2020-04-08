@@ -1,0 +1,29 @@
+Create the snapshot Request
+
+curl -XPUT 'https://vpc-production.us-west-1.es.amazonaws.com/_snapshot/my-snapshot-repo/2020-02-28'
+
+
+To get all the snapshots and repo name
+curl -XGET 'https://vpc-production.us-west-1.es.amazonaws.com/_snapshot?pretty'
+
+
+Verify the snapshot status and name
+curl -XGET 'https://vpc-production.us-west-1.es.amazonaws.com/_snapshot/my-snapshot-repo/_all?pretty'
+
+
+To check the number of indices
+curl -XGET 'https://vpc-production.us-west-1.es.amazonaws.com/_cat/indices'
+curl -XGET 'https://vpc-restore.us-west-1.es.amazonaws.com/_cat/indices'
+
+
+Need to register the repo with the new restore domain before restoring.
+python register-repo_restore.py (after changing the endpoint)
+
+
+Confirm that the snapshot domain is registered with the new restore domain
+curl -XGET 'https://vpc-restore.us-west-1.es.amazonaws.com/_snapshot?pretty'
+
+
+
+DELETE everything from restore cluster (CRITICAL)
+curl -XDELETE 'https://vpc-restore.us-west-1.es.amazonaws.com/_all'
