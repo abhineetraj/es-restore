@@ -23,3 +23,6 @@
         }
     ]
 }
+
+
+The trust relationship needs to change from EC2 to ES
