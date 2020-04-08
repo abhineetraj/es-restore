@@ -14,5 +14,5 @@ then
 	sleep 120
 	#Restore Snapshot on Stage Cluster
 	curl -XPOST "https://vpc-staging-.us-west-1.es.amazonaws.com/_snapshot/my-snapshot-repo/`date +%Y-%m-%d`/_restore"
- 	echo "Snapshot-Date --> $ddate and Status --> $dstate" | mailx -r abhineetraj@hotmail.com -s "Stage Elasticsearch Restore Complete - `date`"  abhineetraj@hotmail.com 
+ 	echo "Snapshot-Date --> $ddate and Status --> $dstate" | mailx -r abhineetraj@google.com -s "Stage Elasticsearch Restore Complete - `date`"  abhineetraj@google.com 
 fi
