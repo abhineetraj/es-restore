@@ -27,3 +27,9 @@ r = requests.put(url, auth=awsauth, json=payload, headers=headers)
 
 print(r.status_code)
 print(r.text)
+
+
+###Setting up the environment###
+#yum install python34 python34-pip -y
+#python3 -m venv my_venv && source my_venv/bin/activate
+#pip install boto3 requests requests_aws4auth
